@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -31,7 +32,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public String introduce() {
-        return name;
+        return name+" for "+ SecurityContextHolder.getContext().getAuthentication().getName();
     }
 
     @Override
