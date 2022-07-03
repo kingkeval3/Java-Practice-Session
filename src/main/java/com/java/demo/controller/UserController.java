@@ -4,7 +4,11 @@ import com.java.demo.AbstractRestService;
 import com.java.demo.datastore.model.UserModel;
 import com.java.demo.datastore.repositories.UserRepository;
 import com.java.demo.exceptions.DataException;
+import com.java.demo.pojos.UIResponse;
 import com.java.demo.services.UserService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +38,11 @@ public class UserController extends AbstractRestService {
         return (List<UserModel>) userService.fetchUsers();
     }
 
+    @ApiOperation(value = "Create User in Database", notes = "Mandatory fields : username, password")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "successfully inserted user", response = UIResponse.class),
+            @ApiResponse(code = 500, message = "Internal Server Error", response = DataException.class),
+    })
     @RequestMapping(value="/addUser", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<?> addUser(@RequestBody UserModel newUser) throws DataException{
 
