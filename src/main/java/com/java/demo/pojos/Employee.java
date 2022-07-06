@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.http.HttpStatus;
 
 import java.io.Serializable;
 
@@ -12,9 +11,10 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UIResponse implements Serializable {
+public class Employee implements Serializable {
 
-    private Object entity;
-    private String message;
-    private HttpStatus httpStatus;
+    private String name;
+    private Integer age;
+    private String company;
+
 }

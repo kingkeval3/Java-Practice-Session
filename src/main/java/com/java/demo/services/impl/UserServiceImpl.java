@@ -34,11 +34,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserModel addUser(UserModel userModel) throws DataException {
-
-        if(userModel.getAge()==null){
-            throw new DataException("Age cannot be null", HttpStatus.BAD_REQUEST);
-        }
-
         return userRepository.save(userModel);
     }
 

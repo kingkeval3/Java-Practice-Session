@@ -17,8 +17,9 @@ public class UserModel {
 
     @Id
     private ObjectId id;
-    private String name;
-    private Integer age;
-    private String job;
+    private String userName;
+    private String password;
+    private String roles;
+    private Boolean isActive;
 
 }

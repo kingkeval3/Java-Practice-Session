@@ -9,10 +9,10 @@ import org.springframework.http.ResponseEntity;
 
 public class AbstractRestService {
 
-    protected ResponseEntity<UIResponse> buildSuccess(UserModel userModel,String message){
+    protected ResponseEntity<UIResponse> buildSuccess(Object object,String message){
 
         UIResponse uiResponse = new UIResponse();
-        uiResponse.setEntity(userModel);
+        uiResponse.setEntity(object);
         uiResponse.setHttpStatus(HttpStatus.OK);
         uiResponse.setMessage(message);
         return new ResponseEntity<>(uiResponse, HttpStatus.OK);
