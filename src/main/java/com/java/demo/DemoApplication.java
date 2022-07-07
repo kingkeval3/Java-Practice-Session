@@ -29,6 +29,8 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+	//Swagger-UI API url - http://localhost:9090/swagger-ui.html#/
+	//Swagger API doc - http://localhost:9090/v2/api-docs
 	@Bean
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
