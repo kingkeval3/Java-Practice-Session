@@ -159,7 +159,7 @@ public class FileUtil {
     }
 
     public static void writeObjects2ExcelFile(List<UserModel> userModels, String filePath) throws IOException {
-        String[] COLUMNs = {"Id", "Name", "Age", "Role"};
+        String[] columns = {"Id", "Name", "Age", "Role"};
 
         Workbook workbook = new XSSFWorkbook();
 
@@ -178,9 +178,9 @@ public class FileUtil {
         Row headerRow = sheet.createRow(0);
 
         // Header
-        for (int col = 0; col < COLUMNs.length; col++) {
+        for (int col = 0; col < columns.length; col++) {
             Cell cell = headerRow.createCell(col);
-            cell.setCellValue(COLUMNs[col]);
+            cell.setCellValue(columns[col]);
             cell.setCellStyle(headerCellStyle);
         }
 

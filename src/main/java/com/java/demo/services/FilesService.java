@@ -20,8 +20,14 @@ public interface FilesService {
 
     public Employee deSerializeObject(MultipartFile objectFile) throws IOException, ClassNotFoundException;
 
-    public JsonNode excelToJson(MultipartFile file) throws Exception;
+    public Object excelToJson(MultipartFile file) throws Exception;
 
     public ResponseEntity jsonToExcel() throws Exception;
+
+    public Object csvToJson(MultipartFile file) throws Exception;
+
+    public ResponseEntity jsonToCsv() throws Exception;
+
+    public ResponseEntity generatePDF() throws Exception;
 
 }

@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserModel {
 
     @Id
-    private ObjectId id;
+    private String id;
     private String userName;
     private String password;
     private String roles;
