@@ -1,7 +1,7 @@
 package com.java.demo.controller;
 
 import com.java.demo.AbstractRestService;
-import com.java.demo.datastore.model.UserModel;
+import com.java.demo.datastore.models.UserModel;
 import com.java.demo.datastore.repositories.UserRepository;
 import com.java.demo.exceptions.DataException;
 import com.java.demo.services.UserService;
@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.crypto.Data;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
