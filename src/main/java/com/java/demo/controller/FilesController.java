@@ -24,7 +24,6 @@ public class FilesController extends AbstractRestService {
     @Value("${spring.application.name}")
     private String applicationName;
 
-    Logger logger = LoggerFactory.getLogger(FilesController.class);
 
     @GetMapping(value="/serialization")
     public ResponseEntity<?> serializeObject() throws IOException {
