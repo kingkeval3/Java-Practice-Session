@@ -96,16 +96,4 @@ public class FilesController extends AbstractRestService {
             return ResponseEntity.internalServerError().body("File export failed!");
         }
     }
-
-    @GetMapping(value ="/hello")
-    public ResponseEntity<?> sampleAPI(){
-
-
-        logger.info("Intro Service Called");
-        logger.warn("Null pointer exception may be thrown while accessing unknown property from properties file");
-        logger.error("Sample error thrown: "+new NullPointerException().getMessage());
-
-        return buildSuccess(applicationName,"Application Introduced!");
-    }
-
 }

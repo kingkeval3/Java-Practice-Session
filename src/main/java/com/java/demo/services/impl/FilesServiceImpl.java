@@ -196,6 +196,8 @@ public class FilesServiceImpl implements FilesService {
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName());
 
+        logger.info("File Length of "+file.getName()+": "+file.length());
+
         return ResponseEntity.ok()
                 .headers(headers)
                 .contentLength(file.length())
